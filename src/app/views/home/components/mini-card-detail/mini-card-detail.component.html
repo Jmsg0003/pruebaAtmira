@@ -1,0 +1,18 @@
+<div class="card-container">
+    <header>
+      <h3 class="heading-card" role="regime title">{{dato.title}}</h3>
+      <hr class="h-line">
+    </header>
+    <main class="card-body" role="regime info"> 
+      <picture>
+        <img src="{{dato.url}}">
+      </picture>
+      <div class="card-fecha">
+        <span>{{dato.date| date:'mediumDate'}}</span>
+      </div>
+    </main>
+    <button class="card-button text-button" (click)="daySelected($event)"
+      role="select regime">
+      <span class="check-label">Ver detalle</span>
+    </button>
+  </div>

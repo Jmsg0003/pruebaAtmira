@@ -1,0 +1,28 @@
+<div class="home-container" role="home view">
+  <div class="main-layout">
+    <app-navbar></app-navbar>
+    <div class="tabs-container">
+      <section class="main-section">
+        <div class="card" *ngFor="let dia of contentNasa">
+          <app-mini-card-detail [dato]="dia" (selectedDay)="daySelected(dia)"></app-mini-card-detail>
+         <!--  <header>
+            <h3 class="heading-card" role="regime title">{{dia.title}}</h3>
+            <hr class="h-line" role="dividing line">
+          </header>
+          <main class="card-body" role="regime info">
+            <picture>
+              <img src="{{dia.url}}">
+            </picture>
+            <div>
+              <span>{{dia.date| currency}}</span>
+            </div>
+          </main>
+          <button class="card-button text-button" (click)="daySelected($event)"
+            role="select regime">
+            <span class="check-label">Ver detalle</span>
+          </button> -->
+        </div>
+      </section>  
+    </div>
+  </div>
+</div>
