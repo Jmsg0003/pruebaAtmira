@@ -4,19 +4,25 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.css'],
+
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent  implements OnInit {
 
-  constructor( private router:Router ) { }
+  constructor( private router: Router ) { }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
   }
+  buscarPhoto(fecha: string ) {
 
-  buscarDia( termino: string ){
-    // console.log(termino);
-    this.router.navigate( ['/buscar',termino] );
+    fecha = fecha.trim();
+
+    if ( fecha.length === 0 ) {
+      return;
+    }
+
+    this.router.navigate(['/detail', fecha ]);
+
   }
 
 }

@@ -1,25 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WelcomePageComponent } from './views/welcome-page/welcome-page.component';
+import { CardDetailComponent } from './views/card-detail/card-detail.component';
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: WelcomePageComponent,
+    path: 'home',
+    component: HomeComponent,
   },
   {
-    path: 'home',
-    loadChildren: () =>
-      import('./views/home/home.module').then((module) => module.HomeModule),
+    path: 'nasa/detail/:date',
+   component: CardDetailComponent
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: '/home',
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

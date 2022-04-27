@@ -1,0 +1,30 @@
+
+
+<div class="row animate__animated animate__fadeIn animate__faster" *ngIf="photo">
+  <div class="col-md-6">
+      <!-- Imagen -->
+      <img [src]="photo.url" 
+           [alt]="photo.title"
+           class="img-thumbnail">
+  </div>
+
+  <div class="col-md-6">
+      <h3>{{ photo.title }}</h3>
+      <h3>{{ photo.date | date:'mediumDate'}}</h3>
+      <div class="row mt-3">
+          <div class="col text-white">
+              {{ photo.explanation }}
+          </div>
+      </div>
+
+      <div class="row mt-5">
+          <div class="col">
+              <button class="btn btn-outline-info"
+                      (click)="onRegresar()">
+                  Regresar
+              </button>
+          </div>
+      </div>
+
+  </div>
+</div>
